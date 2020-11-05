@@ -3,7 +3,7 @@ import "../styles/Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import HomeIcon from "@material-ui/icons/Home";
 import FlagIcon from "@material-ui/icons/Flag";
-import SubdirectoryArrowLeftOutlined from "@material-ui/icons/SubdirectoryArrowLeftOutlined";
+// import SubdirectoryArrowLeftOutlined from "@material-ui/icons/SubdirectoryArrowLeftOutlined";
 import StorefrontOutlined from "@material-ui/icons/StorefrontOutlined";
 import SupervisedUserCircle from "@material-ui/icons/SupervisedUserCircle";
 import { SubscriptionsOutlined } from "@material-ui/icons";

@@ -1,4 +1,3 @@
-import { WidgetsOutlined } from "@material-ui/icons";
 import React from "react";
 import "../styles/Widgets.css";
 
@@ -13,6 +12,7 @@ const Widgets = () => {
         allowTransparency="true"
         allow="encrypted-media"
         frameborder="0"
+        title="facebook"
         style={{ border: "none", overflow: "hidden", borderRadius:"10px" }}
       ></iframe>
     </div>

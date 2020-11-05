@@ -1,10 +1,19 @@
 import Button from "@material-ui/core/Button";
 import React from "react";
+import { auth, provider } from "../Firebase/FirebaseConfig";
 import "../styles/Login.css";
 
 const Login = () => {
   const signIn = () => {
     //signIn
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result.user?.email);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   return (
