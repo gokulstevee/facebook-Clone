@@ -9,9 +9,8 @@ const Widgets = () => {
         width="360"
         height="99%"
         scrolling="no"
-        allowTransparency="true"
         allow="encrypted-media"
-        frameborder="0"
+        frameBorder="0"
         title="facebook"
         style={{ border: "none", overflow: "hidden", borderRadius:"10px" }}
       ></iframe>

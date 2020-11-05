@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/Sidebar.css";
 import SidebarRow from "./SidebarRow";
 import LocalHospitalicon from "@material-ui/icons/LocalHospital";
@@ -8,14 +8,14 @@ import ChatIcon from "@material-ui/icons/Chat";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import { ExpandMoreOutlined } from "@material-ui/icons";
+import { UserContext } from "../context/Context";
 
 const Sidebar = () => {
+  const { state } = useContext(UserContext);
+
   return (
     <div className="sidebar">
-      <SidebarRow
-       src="https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/s150x150/90886555_3192855667411686_3984898308228251648_n.jpg?_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_ohc=V8zzqcVubiEAX8XGmEY&oh=4532576b1ea57eb0fe20fa64094ff19c&oe=5FCB251A"
-       title="Gokul"
-      />
+      <SidebarRow src={state.user.photoURL} title={state.user.displayName} />
       <SidebarRow
         Icon={LocalHospitalicon}
         title="Covid-19 Information Center"

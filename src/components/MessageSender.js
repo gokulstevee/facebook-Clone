@@ -1,11 +1,14 @@
 import { Avatar } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/MessageSender.css";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import { UserContext } from "../context/Context";
 
 const MessageSender = () => {
+  const { state } = useContext(UserContext);
+
   const [input, setInput] = useState("");
   const [imageURL, setImageURl] = useState("");
 
@@ -19,10 +22,10 @@ const MessageSender = () => {
   return (
     <div className="messageSender">
       <div className="messageSender__top">
-        <Avatar />
+        <Avatar src={state.user.photoURL} />
         <form>
           <input
-            placeholder="Whats on your mind?"
+            placeholder={`What's on your mind, ${state.user.displayName}?`}
             className="messageSender__input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -30,7 +33,7 @@ const MessageSender = () => {
           <input
             placeholder="image URL (optional)"
             value={imageURL}
-            onchange={(e) => setImageURl(e.target.value)}
+            onChange={(e) => setImageURl(e.target.value)}
           />
           <button onClick={handleSubmit} type="submit">
             Hiden button

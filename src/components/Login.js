@@ -1,15 +1,26 @@
 import Button from "@material-ui/core/Button";
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../context/Context";
 import { auth, provider } from "../Firebase/FirebaseConfig";
+import { SET_USER } from "../reducer/ActionTypes";
 import "../styles/Login.css";
+import { actionTypes } from "./reducer";
+import { useStateValue } from "./StateProvider";
 
 const Login = () => {
+  // const [state, dispatch] = useStateValue();
+  const { dispatch } = useContext(UserContext);
+
   const signIn = () => {
     //signIn
     auth
       .signInWithPopup(provider)
       .then((result) => {
         console.log(result.user?.email);
+        dispatch({
+          type: SET_USER,
+          payload: result.user,
+        });
       })
       .catch((err) => {
         console.log(err.message);

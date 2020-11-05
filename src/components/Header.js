@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import HomeIcon from "@material-ui/icons/Home";
@@ -12,8 +12,11 @@ import AddIcon from "@material-ui/icons/Add";
 import ForumIcon from "@material-ui/icons/Forum";
 import NotificationActiveIcon from "@material-ui/icons/NotificationsActive";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { UserContext } from "../context/Context";
 
 const Header = () => {
+const {state} = useContext(UserContext)
+
   return (
     <div className="header">
       {/**********header left******** */}
@@ -24,7 +27,7 @@ const Header = () => {
         />
         <div className="header__input">
           <SearchIcon />
-          <input type="text" placeholder="Search"/>
+          <input type="text" placeholder="Search" />
         </div>
       </div>
 
@@ -50,8 +53,8 @@ const Header = () => {
       {/**********header right******** */}
       <div className="header__right">
         <div className="header__info">
-          <Avatar />
-          <h4 style={{marginLeft:"5px"}}>ktrththtrjtyjfref</h4>
+          <Avatar  src={state.user.photoURL}/>
+  <h4 style={{ marginLeft: "5px" }}>{state.user.displayName}</h4>
         </div>
         <IconButton>
           <AddIcon />
