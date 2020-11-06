@@ -4,7 +4,7 @@ import Feed from "./Feed";
 import Header from "./Header";
 import Login from "./Login";
 import SideBar from "./Sidebar";
-import { useStateValue } from "./StateProvider";
+// import { useStateValue } from "./StateProvider";
 import Widgets from "./Widgets";
 import { UserContext } from "../context/Context";
 

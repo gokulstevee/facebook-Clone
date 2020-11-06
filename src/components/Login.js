@@ -4,8 +4,8 @@ import { UserContext } from "../context/Context";
 import { auth, provider } from "../Firebase/FirebaseConfig";
 import { SET_USER } from "../reducer/ActionTypes";
 import "../styles/Login.css";
-import { actionTypes } from "./reducer";
-import { useStateValue } from "./StateProvider";
+// import { actionTypes } from "./reducer";
+// import { useStateValue } from "./StateProvider";
 
 const Login = () => {
   // const [state, dispatch] = useStateValue();
