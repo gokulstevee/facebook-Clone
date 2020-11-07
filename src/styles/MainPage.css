@@ -1,0 +1,7 @@
+.main {
+  background-color: #f1f2f5;
+}
+
+.main__body {
+  display: flex;
+}
